@@ -15,12 +15,22 @@ import { org } from "@/lib/org";
  * back to a mailto: link rather than silently posting into a void — a
  * volunteer offer that vanishes is worse than an ugly handoff.
  */
-const FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-const endpoint = FORM_ID ? `https://formspree.io/f/${FORM_ID}` : null;
+/**
+ * Separate endpoints so volunteer offers land in their own bucket: they need
+ * follow-up, general questions often don't. Falls back to the contact form if
+ * only one ID is configured.
+ */
+const CONTACT_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+const VOLUNTEER_ID =
+  process.env.NEXT_PUBLIC_FORMSPREE_VOLUNTEER_ID || CONTACT_ID;
+
+const endpointFor = (id: string | undefined) =>
+  id ? `https://formspree.io/f/${id}` : null;
 
 type Status = "idle" | "sending" | "ok" | "error";
 
-function useFormspree(subject: string) {
+function useFormspree(subject: string, formId: string | undefined) {
+  const endpoint = endpointFor(formId);
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -70,7 +80,10 @@ function Fallback({ message }: { message: string }) {
 }
 
 export function ContactForm() {
-  const { status, error, onSubmit } = useFormspree("Contact form — launchpadrobotics.org");
+  const { status, error, onSubmit } = useFormspree(
+    "Contact form — launchpadrobotics.org",
+    CONTACT_ID,
+  );
 
   if (status === "ok") {
     return (
@@ -112,7 +125,10 @@ export function ContactForm() {
 }
 
 export function VolunteerForm() {
-  const { status, error, onSubmit } = useFormspree("Volunteer signup — launchpadrobotics.org");
+  const { status, error, onSubmit } = useFormspree(
+    "Volunteer signup — launchpadrobotics.org",
+    VOLUNTEER_ID,
+  );
 
   if (status === "ok") {
     return (
