@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.32 198.32" width="512" height="512">
+<title>Launchpad Robotics</title>
+<rect width="198.32" height="198.32" rx="39.664" fill="#111C34"/>
+<g transform="translate(25.16,71.16)">
+<path d="M10 10 L10 -14" stroke="#F5C518" stroke-width="20" fill="none"/>
+<circle cx="10" cy="-14" r="16" fill="none" stroke="#F5C518" stroke-width="8"/>
+<path d="M10 10 L10 90 L50 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/>
+<path transform="translate(72,0)" d="M10 90 L10 10 L44 10 Q66 10 66 31 Q66 52 44 52 L10 52" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/>
+<path transform="translate(72,0)" d="M38 52 L66 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/>
+</g>
+</svg>

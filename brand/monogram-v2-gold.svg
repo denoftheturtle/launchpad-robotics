@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="87 122 320 320" role="img" aria-label="Launchpad Robotics">
+<g fill="#f5c518" fill-rule="evenodd">
+<path id="letter-l" d="M74 110H100V208H147V230H74Z"/>
+<g transform="translate(27,-156)"><g id="letter-r">
+        <path d="M146 266H185C216 266 232 279 232 304C232 323 222 337 203 342L253 427L233 438L182 344H177V323H184C200 323 207 317 207 304C207 292 200 286 184 286H146Z"/>
+        <path d="M146 297H172V390H146Z"/>
+        <path id="r-terminal" d="M270 445A24 24 0 1 0 222 445A24 24 0 1 0 270 445ZM256 445A10 10 0 1 0 236 445A10 10 0 1 0 256 445Z"/>
+      </g></g>
+</g>
+</svg>

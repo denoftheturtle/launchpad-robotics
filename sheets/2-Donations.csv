@@ -1,0 +1,2 @@
+Date,Donor name,Email,Employer,Income type,Gross amount,Match amount,Total,Status,Date submitted,Date received,Reference ID,Team,Anonymous?,Notes
+2026-01-15,EXAMPLE - delete this row,donor@example.com,Microsoft,Donation from the general public,250,250,=F2+G2,submitted,2026-01-16,,MSFT-12345,,no,Match pending in Benevity

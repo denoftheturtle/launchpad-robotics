@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 410" width="900" height="380.412">
+<title>Launchpad Robotics</title>
+<rect width="970" height="410" fill="#111C34"/>
+<path d="M415 104 L415 84" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<circle cx="415" cy="64" r="16" fill="none" stroke="#F5C518" stroke-width="8"/>
+<path d="M535 104 L535 62" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<circle cx="535" cy="42" r="16" fill="none" stroke="#F5C518" stroke-width="8"/>
+<path d="M230.5 306 L243.55 323.711" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<circle cx="255.414" cy="339.812" r="16" fill="none" stroke="#F5C518" stroke-width="8"/>
+<path d="M562.5 306 L562.5 330" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<circle cx="562.5" cy="350" r="16" fill="none" stroke="#F5C518" stroke-width="8"/>
+<path d="M622.5 306 L622.5 350" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt"/>
+<circle cx="622.5" cy="370" r="16" fill="none" stroke="#F5C518" stroke-width="8"/>
+<g transform="translate(94,94) scale(1)"><path d="M10 10 L10 90 L50 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(167,94) scale(1)"><path d="M10 90 L33 10 L45 10 L68 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M24 66 L54 66" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(258,94) scale(1)"><path d="M10 10 L10 66 Q10 90 34 90 L42 90 Q66 90 66 66 L66 10" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(347,94) scale(1)"><path d="M10 90 L10 10 L68 90 L68 10" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(438,94) scale(1)"><path d="M64 28 Q64 10 40 10 L38 10 Q10 10 10 38 L10 62 Q10 90 38 90 L40 90 Q64 90 64 72" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(525,94) scale(1)"><path d="M10 10 L10 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M68 10 L68 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M10 50 L68 50" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(616,94) scale(1)"><path d="M10 90 L10 10 L43 10 Q70 10 70 37 Q70 64 43 64 L10 64" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(709,94) scale(1)"><path d="M10 90 L33 10 L45 10 L68 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M24 66 L54 66" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(800,94) scale(1)"><path d="M10 90 L10 10 L38 10 Q66 10 66 38 L66 62 Q66 90 38 90 Z" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(164.5,216) scale(1)"><path d="M10 90 L10 10 L44 10 Q66 10 66 31 Q66 52 44 52 L10 52" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M38 52 L66 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(253.5,216) scale(1)"><path d="M37.5 10 L38 10 Q10 10 10 38 L10 62 Q10 90 38 90 L37.5 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M42.5 10 L42 10 Q70 10 70 38 L70 62 Q70 90 42 90 L42.5 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(346.5,216) scale(1)"><path d="M10 10 L40 10 Q61 10 61 29 Q61 50 40 50 L10 50 L42 50 Q64 50 64 70 Q64 90 42 90 L10 90 L10 10" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(433.5,216) scale(1)"><path d="M37.5 10 L38 10 Q10 10 10 38 L10 62 Q10 90 38 90 L37.5 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M42.5 10 L42 10 Q70 10 70 38 L70 62 Q70 90 42 90 L42.5 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(526.5,216) scale(1)"><path d="M10 10 L62 10" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/><path d="M36 10 L36 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(611.5,216) scale(1)"><path d="M11 10 L11 90" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(646.5,216) scale(1)"><path d="M64 28 Q64 10 40 10 L38 10 Q10 10 10 38 L10 62 Q10 90 38 90 L40 90 Q64 90 64 72" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+<g transform="translate(733.5,216) scale(1)"><path d="M62 27 Q62 10 38 10 L30 10 Q10 10 10 30 Q10 50 32 50 L40 50 Q62 50 62 70 Q62 90 42 90 L34 90 Q10 90 10 73" stroke="#F5C518" stroke-width="20" fill="none" stroke-linecap="butt" stroke-linejoin="round"/></g>
+</svg>

@@ -1,0 +1,2 @@
+Date,Vendor,Category,Covered?,Description,Pre-tax,Sales tax,Total,Funded by sponsor?,Who paid out of pocket,Reimbursement status,Date submitted,Date reimbursed,Receipt link,Team,Notes
+2026-01-20,EXAMPLE - delete this row,Robotics parts & equipment,"=IFERROR(VLOOKUP(C2,Lists!$A$2:$B$15,2,FALSE),"""")",Motors and wheels,120.00,11.40,=F2+G2,yes,,not-needed,,,,,

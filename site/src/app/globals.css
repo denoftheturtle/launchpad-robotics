@@ -1,0 +1,419 @@
+/* Palette is the logo, inverted.
+
+   The mark is gold ink on navy because it's printed on a navy shirt. A website
+   is not a shirt. Running the shirt's ground across a whole screen made every
+   page read as a dashboard at midnight, and gold-on-navy body copy is tiring
+   over more than a paragraph.
+
+   So: paper ground, navy ink, gold reserved for things you can click. Navy and
+   gold are still the only two brand colours — they've just swapped jobs. Navy
+   survives as full-strength ink and as the footer/hero bands, which is where
+   the logo gets to appear in its native gold-on-navy form.
+
+   Contrast: navy ink on paper ~14:1, muted ~6.4:1, navy-on-gold ~9.6:1.
+   All past WCAG AA; the first two past AAA. */
+:root {
+  --bg: #fbfaf7;           /* warm paper, not pure white — easier under gym lighting */
+  --bg-soft: #f3f1ec;
+  --card: #ffffff;
+  --line: #e2ded4;
+  --line-strong: #cfc8b8;
+  --fg: #16203a;           /* the logo navy, deepened for body text */
+  --muted: #5d6880;
+  --ink: #16203a;          /* dark bands: hero, footer */
+  --ink-soft: #1e2a48;
+  --ink-line: #30405f;
+  --on-ink: #f4f6fb;
+  --on-ink-muted: #a8b4ce;
+  --accent: #f5c518;
+  --accent-deep: #c99a06;  /* gold dark enough for text on paper */
+  --accent-ink: #1a1405;   /* text that sits on top of --accent */
+  --accent-2: #1668a8;
+  --warn: #9a6508;
+  --danger: #c0392b;
+  --radius: 14px;
+  --maxw: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent-2); text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(251,250,247,0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 14px 20px;
+  display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+}
+
+.nav-links { display: flex; gap: 18px; margin-left: auto; flex-wrap: wrap; }
+.nav-links a { color: var(--muted); font-size: 15px; font-weight: 600; }
+.nav-links a:hover { color: var(--fg); text-decoration: none; }
+
+/* ---------- hero ----------
+   The one place the shirt's navy runs edge to edge. It gives the gold logo its
+   native background, anchors the top of every page, and makes the gold CTA the
+   brightest object on the screen. Bounded to the hero so it stays an accent
+   rather than the environment. */
+.hero {
+  padding: 76px 0 68px;
+  background-color: var(--ink);
+  color: var(--on-ink);
+  border-bottom: 3px solid var(--accent);
+  /* Three layers, front to back:
+     1. the via-pad dot grid (brand texture, from the wordmark)
+     2. a navy gradient scrim that guarantees text contrast on the left
+     3. a duotoned circuit-board macro, CC-BY, recoloured into brand navy
+
+     The photo is robotics hardware, deliberately no people. A nonprofit using
+     stock photos of other people's kids reads as dishonest the moment a parent
+     recognises the shot. Hardware carries the engineering feeling with none of
+     that risk. Swap in real team photos when we have releases - see
+     public/img/CREDITS.md. */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(245,197,24,0.16) 1px, transparent 0),
+    linear-gradient(100deg, var(--ink) 26%, rgba(14,22,44,0.82) 55%, rgba(14,22,44,0.42) 100%),
+    url("/img/circuit-hero.jpg");
+  background-size: 28px 28px, cover, cover;
+  background-position: 0 0, center, center right;
+  background-repeat: repeat, no-repeat, no-repeat;
+}
+
+/* A band of robot parts between content sections. Pure texture, sits behind a
+   navy veil so the gold rules above and below still read as the brand edge. */
+.parts-band {
+  height: 190px;
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(90deg, rgba(14,22,44,0.30), rgba(14,22,44,0.05) 50%, rgba(14,22,44,0.30)),
+    url("/img/parts-band.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+@media (max-width: 760px) {
+  /* On narrow screens the text column covers the whole hero, so the scrim has
+     to go nearly opaque or the headline loses contrast. Shift the focal point
+     left so the visible sliver is still the interesting part of the board. */
+  .hero {
+    background-position: 0 0, center, 32% center;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(245,197,24,0.16) 1px, transparent 0),
+      linear-gradient(180deg, rgba(14,22,44,0.90), rgba(14,22,44,0.80)),
+      url("/img/circuit-hero.jpg");
+  }
+  .parts-band { height: 130px; }
+}
+.hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.1; margin: 0 0 18px; letter-spacing: -1.2px; font-weight: 800;
+  color: #fff;
+}
+.hero p.lead { font-size: 19px; color: var(--on-ink-muted); max-width: 58ch; margin: 0 0 30px; }
+.hero a:not(.btn) { color: var(--accent); }
+
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 10px;
+  background: var(--accent); color: var(--accent-ink); font-weight: 700;
+  border: none; cursor: pointer; font-size: 15px;
+}
+.btn:hover { filter: brightness(1.06); text-decoration: none; }
+.btn.secondary { background: transparent; border: 1px solid var(--line-strong); color: var(--fg); }
+.btn.small { padding: 7px 13px; font-size: 13px; }
+.btn.danger { background: var(--danger); color: #fff; }
+/* Inside the navy hero a transparent outline button needs light edges. */
+.hero .btn.secondary { border-color: rgba(255,255,255,0.32); color: #fff; }
+.hero .btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- sections / cards ---------- */
+section { padding: 52px 0; border-top: 1px solid var(--line); }
+.hero + section { border-top: none; }
+/* Alternate bands so long pages have rhythm instead of one flat sheet. */
+section:nth-of-type(even) { background: var(--bg-soft); }
+section h2 {
+  font-size: 28px; margin: 0 0 10px; letter-spacing: -0.5px;
+  padding-top: 14px; position: relative;
+}
+/* Short gold rule above each heading — the trace leaving a via pad. */
+section h2::before {
+  content: ""; position: absolute; top: 0; left: 0;
+  width: 34px; height: 3px; background: var(--accent); border-radius: 2px;
+}
+section h3 { font-size: 19px; margin: 26px 0 10px; }
+.section-sub { color: var(--muted); margin: 0 0 24px; max-width: 70ch; }
+
+.grid { display: grid; gap: 16px; }
+/* `min()` keeps a track from ever exceeding the container. Plain
+   minmax(300px,1fr) overflows on a 320px-wide iPhone SE. */
+.grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); }
+.grid.cols-4 { grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr)); }
+
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px;
+  box-shadow: 0 1px 2px rgba(22,32,58,0.04);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.card:hover { border-color: var(--line-strong); box-shadow: 0 4px 14px rgba(22,32,58,0.07); }
+.card h3 { margin: 0 0 6px; font-size: 17px; }
+.card p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+
+.stat {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px;
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 1px 2px rgba(22,32,58,0.04);
+}
+.stat .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; }
+.stat .value { font-size: 27px; font-weight: 800; letter-spacing: -0.5px; }
+.stat .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.stat.good .value { color: #0f7a46; }
+.stat.warn .value { color: var(--warn); }
+.stat.bad .value { color: var(--danger); }
+
+/* ---------- callouts ---------- */
+.callout {
+  border-radius: var(--radius); padding: 16px 18px; margin: 18px 0;
+  border: 1px solid var(--line); background: var(--bg-soft);
+}
+.callout { background: var(--card); }
+.callout.warn {
+  border-color: #e8cf8a; background: #fdf6e0;
+  border-left: 4px solid var(--accent);
+}
+.callout.warn strong { color: #8a5a06; }
+.callout ol, .callout ul { margin: 8px 0 0; padding-left: 20px; }
+.callout li { margin-bottom: 6px; }
+
+/* ---------- copy field ---------- */
+.copy-field {
+  display: flex; align-items: center; gap: 10px; margin: 10px 0;
+  background: var(--card); border: 1px dashed var(--line-strong);
+  border-radius: 10px; padding: 11px 13px;
+}
+.copy-field code {
+  flex: 1; min-width: 0; font-size: 13.5px; color: var(--accent-2);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  word-break: break-word;
+}
+.copy-field.block { align-items: flex-start; flex-direction: column; }
+.copy-field.block code { white-space: pre-wrap; line-height: 1.55; }
+
+/* ---------- tables ---------- */
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 720px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.6px; background: var(--bg-soft); }
+.table-scroll { background: var(--card); }
+tbody tr:hover td { background: var(--bg-soft); }
+tr:last-child td { border-bottom: none; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+.pill.pledged { background: #ece6f7; color: #5b3f94; }
+.pill.submitted { background: #fbf0d2; color: #8a5a06; }
+.pill.processed { background: #ddeefa; color: #10557f; }
+.pill.received { background: #d9f0e2; color: #0f6b3e; }
+.pill.available { background: #c9ead6; color: #0b5c33; }
+.pill.verified { background: #d9f0e2; color: #0f6b3e; }
+.pill.unconfirmed { background: #fbf0d2; color: #8a5a06; }
+
+/* ---------- forms ---------- */
+.form { display: grid; gap: 14px; max-width: 560px; }
+.form.wide { max-width: 100%; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: 13px; color: var(--muted); font-weight: 600; }
+input, select, textarea {
+  background: var(--card); border: 1px solid var(--line-strong); color: var(--fg);
+  border-radius: 9px; padding: 10px 12px; font-size: 14.5px; font-family: inherit; width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--accent-deep); outline-offset: -1px; border-color: var(--accent-deep);
+}
+textarea { min-height: 110px; resize: vertical; }
+.row { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); }
+.checkbox { display: flex; align-items: center; gap: 9px; }
+.checkbox input { width: auto; }
+.error { color: var(--danger); font-size: 13.5px; }
+.success { color: #0f6b3e; font-size: 14px; }
+
+/* ---------- misc ---------- */
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.tag { display: inline-block; font-size: 11px; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 6px; padding: 1px 7px; margin-left: 6px; }
+
+/* Footer is the second navy band — it closes the page the way the hero opens
+   it, and gives the gold wordmark a second native-background appearance. */
+/* Footer reuses the hero board at low strength so the page closes with the
+   texture it opened on. */
+footer {
+  border-top: 3px solid var(--accent);
+  background-color: var(--ink); color: var(--on-ink-muted);
+  background-image:
+    linear-gradient(0deg, rgba(14,22,44,0.88), rgba(14,22,44,0.88)),
+    url("/img/circuit-hero.jpg");
+  background-size: cover, cover;
+  background-position: center, center bottom;
+  padding: 36px 0 52px; font-size: 13.5px; margin-top: 0;
+}
+footer a { color: var(--accent); }
+.footer-brand { margin: 0 0 10px; color: var(--accent); }
+
+/* Centred lockup for the sign-in screen. Navy card on paper so the gold
+   wordmark keeps its proper ground instead of inheriting whatever's behind. */
+.login-wrap {
+  max-width: 440px; padding: 44px 34px 38px; margin: 56px auto;
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--ink); border-radius: 18px;
+  border-top: 3px solid var(--accent);
+  box-shadow: 0 12px 36px rgba(22,32,58,0.16);
+}
+.login-wrap .form { width: 100%; }
+.login-wrap h1 { color: #fff; }
+.login-wrap, .login-wrap p { color: var(--on-ink-muted); }
+.login-wrap .brand, .login-wrap .logo, .login-wrap svg { color: var(--accent); }
+.login-wrap label { color: var(--on-ink-muted); }
+.login-wrap input {
+  background: rgba(255,255,255,0.06); border-color: var(--ink-line); color: #fff;
+}
+.admin-bar { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 22px; }
+.admin-bar a { color: var(--muted); font-size: 14px; font-weight: 600; }
+.admin-bar a.active { color: var(--fg); border-bottom: 2px solid var(--accent); }
+details.adder { margin: 18px 0; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; background: var(--card); }
+details.adder summary { cursor: pointer; font-weight: 700; }
+details.adder .form { margin-top: 16px; }
+
+/* Prospect list on /donate — checkmarks instead of bullets. */
+.checklist { list-style: none; padding: 0; margin: 0 0 16px; }
+.checklist li {
+  position: relative; padding-left: 28px; margin-bottom: 10px;
+  font-size: 15px; line-height: 1.5;
+}
+.checklist li::before {
+  content: "✓"; position: absolute; left: 0; top: 0;
+  color: var(--accent-deep); font-weight: 700;
+}
+
+/* ===================================================================
+   LOGO
+   Mark + wordmark lockup. The mark inherits colour from context.
+   =================================================================== */
+/* The wordmark IS the identity - there is no separate symbol lockup. It
+   inherits colour via currentColor, so it takes the gold from here. */
+/* On paper the mark is navy; on the navy bands it's gold. Both are correct
+   brand colours — the mark just takes whichever its ground calls for. */
+.logo, .brand svg, .footer-brand svg { display: block; color: var(--fg); }
+.brand { display: inline-flex; align-items: center; color: var(--fg); }
+footer .brand, footer .footer-brand, .hero .brand { color: var(--accent); }
+.brand:hover { text-decoration: none; opacity: 0.88; }
+.admin-brand { gap: 10px; }
+.admin-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.4px;
+  text-transform: uppercase; color: var(--muted);
+  border-left: 1px solid var(--line-strong); padding-left: 10px;
+}
+
+/* ===================================================================
+   MOBILE
+   Phone-first corrections. Most of our traffic is a parent reading
+   this on a phone, often mid-tournament, one-handed.
+   =================================================================== */
+
+/* iOS zooms the page when a focused input is under 16px. Never allow that. */
+input, select, textarea { font-size: 16px; }
+
+/* Honour notches and rounded corners on modern phones. */
+.wrap { padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right)); }
+
+/* Long sponsor URLs / EINs must not force a horizontal scrollbar. */
+body { overflow-x: hidden; }
+a, p, li, td, th { overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+  /* Nav: wordmark + horizontally scrollable links, no hamburger needed
+     for five items. Scrolling beats a menu nobody discovers. */
+  .nav-inner { padding: 11px 16px; gap: 10px; }
+  .brand svg { width: 124px; height: auto; }
+  .nav-links {
+    margin-left: 0; width: 100%; gap: 0;
+    flex-wrap: nowrap; overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Fade the right edge so it's obvious more links exist. */
+    mask-image: linear-gradient(to right, #000 85%, transparent 100%);
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    padding: 8px 0; margin-right: 20px; white-space: nowrap; font-size: 14.5px;
+  }
+  .nav-links a:last-child { margin-right: 28px; }
+
+  .hero { padding: 40px 0 32px; }
+  .hero p.lead { font-size: 17px; }
+
+  /* Full-width tap targets. Thumbs are not mice. */
+  .btn { display: block; width: 100%; text-align: center; padding: 14px 20px; }
+  .btn.small, .btn + .btn { width: auto; display: inline-block; }
+
+  .grid { gap: 12px; }
+  .row { grid-template-columns: 1fr; }
+  .card { padding: 16px; }
+
+  /* Copy fields are the critical mobile interaction: a donor copying the EIN
+     into their employer's portal. Stack so the value gets full width and the
+     Copy button becomes a proper thumb target. */
+  .copy-field { flex-direction: column; align-items: stretch; gap: 8px; }
+  .copy-field .btn.small { width: 100%; padding: 11px 16px; }
+
+  /* Admin bar: seven links. Same horizontal-scroll treatment as the public
+     nav, with the brand pinned above so it doesn't scroll out of reach. */
+  .admin-bar {
+    gap: 0; flex-wrap: nowrap; overflow-x: auto;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    mask-image: linear-gradient(to right, #000 88%, transparent 100%);
+  }
+  .admin-bar::-webkit-scrollbar { display: none; }
+  .admin-bar a { white-space: nowrap; margin-right: 18px; padding: 6px 0; }
+  .admin-bar .brand { margin-right: 18px; }
+  .login-wrap { padding-top: 44px; }
+
+  /* Tables stay scrollable but hint that they move. */
+  .table-scroll { border-radius: 10px; }
+  table { font-size: 13.5px; min-width: 620px; }
+}
+
+@media (max-width: 420px) {
+  :root { --radius: 11px; }
+  .wrap { padding-left: max(14px, env(safe-area-inset-left));
+          padding-right: max(14px, env(safe-area-inset-right)); }
+  .brand svg { width: 108px; height: auto; }
+}
+
+/* Respect users who ask for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,88 @@
+import { org } from "@/lib/org";
+
+/**
+ * Launchpad Robotics wordmark - v2.
+ *
+ * Geometry comes from the client-supplied SVG (brand/wordmark-v2-*.svg),
+ * normalised here: background rect dropped, viewBox tightened to the ink,
+ * and the hard-coded gold swapped for `currentColor` so the mark inherits
+ * colour from its context (gold on navy, navy on light, white on photos).
+ *
+ * Do not re-add a background rect. The mark must be transparent so it can sit
+ * on cards, merch previews and the login panel without a navy slab around it.
+ *
+ * Source of truth: brand/wordmark-v2-currentcolor.svg. Edit there, re-paste here.
+ */
+export function Wordmark({
+  width = 220,
+  className,
+  title,
+}: {
+  width?: number;
+  className?: string;
+  title?: string;
+}) {
+  const a11y = title
+    ? { role: "img" as const, "aria-label": title }
+    : { "aria-hidden": true as const };
+
+  return (
+    <svg
+      viewBox="64 22 940 471"
+      width={width}
+      height={(width * 471) / 940}
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...a11y}
+    >
+  <g id="lettering" fill="currentColor" fillRule="evenodd">
+    <g id="launchpad">
+      <path id="letter-l" d="M74 110H100V208H147V230H74Z"/>
+      <path id="letter-a-first" d="M155 230L193 110H220L262 230H235L226 204H190L181 230ZM197 182H219L208 145Z"/>
+      <path id="letter-u" d="M269 110H294V184C294 202 300 209 314 209C328 209 334 202 334 184V110H359V185C359 215 344 231 314 231C284 231 269 215 269 185Z"/>
+      <g id="letter-n">
+        <path d="M378 110H403L469 230H442L402 156V230H378Z"/>
+        <path d="M445 85H469V207L445 166Z"/>
+        <path id="n-terminal" d="M480 68A23 23 0 1 0 434 68A23 23 0 1 0 480 68ZM467 68A10 10 0 1 0 447 68A10 10 0 1 0 467 68Z"/>
+      </g>
+      <path id="letter-c-top" d="M574 116L566 137C558 132 550 130 540 130C521 130 511 146 511 170C511 194 522 210 540 210C550 210 559 206 567 200L576 220C566 228 553 232 538 232C504 232 485 209 485 170C485 132 504 108 539 108C553 108 565 111 574 116Z"/>
+      <g id="letter-h">
+        <path d="M589 78H614V156H654V93H679V230H654V178H614V230H589Z"/>
+        <path id="h-left-terminal" d="M626 57A25 25 0 1 0 576 57A25 25 0 1 0 626 57ZM611 57A10 10 0 1 0 591 57A10 10 0 1 0 611 57Z"/>
+        <path id="h-right-terminal" d="M684 80A17 17 0 1 0 650 80A17 17 0 1 0 684 80ZM673 80A6 6 0 1 0 661 80A6 6 0 1 0 673 80Z"/>
+      </g>
+      <path id="letter-p" d="M697 110H740C768 110 782 125 782 149C782 175 766 190 740 190H729V167H739C751 167 757 160 757 149C757 137 751 131 739 131H723V230H697Z"/>
+      <path id="letter-a-second" d="M779 230L817 110H844L886 230H859L850 204H814L805 230ZM821 182H843L832 145Z"/>
+      <path id="letter-d" d="M895 110H935C974 110 994 132 994 170C994 208 974 230 935 230H895ZM921 132V208H934C957 208 968 194 968 170C968 146 957 132 934 132Z"/>
+    </g>
+    <g id="robotics">
+      <g id="letter-r">
+        <path d="M146 266H185C216 266 232 279 232 304C232 323 222 337 203 342L253 427L233 438L182 344H177V323H184C200 323 207 317 207 304C207 292 200 286 184 286H146Z"/>
+        <path d="M146 297H172V390H146Z"/>
+        <path id="r-terminal" d="M270 445A24 24 0 1 0 222 445A24 24 0 1 0 270 445ZM256 445A10 10 0 1 0 236 445A10 10 0 1 0 256 445Z"/>
+      </g>
+      <g id="letter-o-first">
+        <path d="M297 265C265 267 245 290 245 328C245 366 265 389 297 391V369C281 367 272 352 272 328C272 304 281 289 297 287Z"/>
+        <path d="M303 265C335 267 355 290 355 328C355 366 335 389 303 391V369C319 367 328 352 328 328C328 304 319 289 303 287Z"/>
+      </g>
+      <path id="letter-b" d="M372 266H416C444 266 460 278 460 300C460 313 454 323 444 327C457 332 463 342 463 357C463 379 447 390 421 390H403V368H417C430 368 437 364 437 354C437 344 430 338 417 338H404V317H415C427 317 433 312 433 302C433 292 427 287 414 287H397V390H372Z"/>
+      <g id="letter-o-second">
+        <path d="M527 265C495 267 475 290 475 328C475 366 495 389 527 391V369C511 367 502 352 502 328C502 304 511 289 527 287Z"/>
+        <path d="M533 265C565 267 585 290 585 328C585 366 565 389 533 391V369C549 367 558 352 558 328C558 304 549 289 533 287Z"/>
+      </g>
+      <g id="letter-t">
+        <path d="M592 266H682V288H592Z"/>
+        <path d="M624 297H649V442H624Z"/>
+        <path id="t-terminal" d="M661 458A25 25 0 1 0 611 458A25 25 0 1 0 661 458ZM646 458A10 10 0 1 0 626 458A10 10 0 1 0 646 458Z"/>
+      </g>
+      <g id="letter-i">
+        <path d="M696 266H722V425H696Z"/>
+        <path id="i-terminal" d="M733 437A24 24 0 1 0 685 437A24 24 0 1 0 733 437ZM719 437A10 10 0 1 0 699 437A10 10 0 1 0 719 437Z"/>
+      </g>
+      <path id="letter-c-bottom" d="M830 274L822 295C814 290 806 288 796 288C777 288 767 304 767 328C767 352 778 368 796 368C806 368 815 364 823 358L832 378C822 386 809 390 794 390C760 390 741 367 741 328C741 290 760 266 795 266C809 266 821 269 830 274Z"/>
+      <path id="letter-s" d="M920 273L912 294C903 289 894 287 884 287C873 287 868 292 868 300C868 309 876 313 892 319C916 328 926 338 926 355C926 378 909 391 884 391C867 391 852 386 842 381L850 360C860 366 873 370 883 370C895 370 902 365 902 357C902 348 894 344 879 338C855 328.4 844 320 844 302C844 280 861 265 885 265C899 265 911 268 920 273Z"/>
+    </g>
+  </g>
+</svg>
+  );
+}

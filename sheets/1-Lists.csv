@@ -1,0 +1,47 @@
+Expense category,Covered by Yellowstone?,Note
+Robotics parts & equipment,YES,Core qualifying expense.
+Registration fees,YES,Event and competition entrance fees qualify.
+Competition / event fees,YES,Event and competition entrance fees qualify.
+Travel to competitions,YES,"Bus rental, gas, or IRS standard mileage for a private vehicle. Keep a mileage log."
+Tools,YES,"Screwdrivers, saws, tape measures, tool boxes."
+Robotics software (for the kids),YES,"Design and development software the students use, e.g. RobotC, AutoCAD."
+Tee shirts / uniforms,NO - fund separately,Explicitly excluded by the sponsor. Fund separately.
+Food & snacks,NO - fund separately,Explicitly excluded by the sponsor. Fund separately.
+Trophies & awards,NO - fund separately,Explicitly excluded by the sponsor.
+Banners / advertising / business cards,NO - fund separately,Explicitly excluded by the sponsor.
+Website & domain,NO - fund separately,Explicitly excluded. This site's domain and hosting cannot be paid from sponsor funds.
+Fundraising expenses,NO - fund separately,Explicitly excluded by the sponsor.
+"Business software (Office, QuickBooks)",NO - fund separately,Non-robotics software is excluded. Student robotics software is fine — use that category.
+Other,ASK BRUCE FIRST,Not on the sponsor's list either way. Ask Bruce before spending if the amount is material.
+
+Income type,Tax-deductible?,Note
+Donation from the general public,YES - may route through Yellowstone,"Community members, coworkers, local businesses. Exactly what the sponsor is for."
+Corporate match or volunteer grant,YES - may route through Yellowstone,Employer matching funds and volunteer-hour grants paid to the sponsor.
+Participation dues or fees,NO - keep out of sponsor pipeline,Fees your club requires for participation are not deductible. Collect these outside the sponsor pipeline.
+Parent buying equipment / entry for their own child,NO - keep out of sponsor pipeline,"A parent purchasing robotics equipment or paying entry fees for their own kid is a personal expense, not a gift."
+Donor received something of equal value,NO - keep out of sponsor pipeline,"Raffles, merchandise, ticketed items. The portion matched by value received is not deductible."
+Other non-deductible income,NO - keep out of sponsor pipeline,Anything else that isn't a properly tax-deductible gift.
+
+Donation status,,Meaning
+pledged,,"Promised, nothing submitted yet"
+submitted,,Sent to employer / platform
+processed,,Employer or platform approved it
+received,,Yellowstone has the money
+available,,Confirmed drawable for our teams
+
+Reimbursement status,,Meaning
+not-needed,,"Paid directly by Yellowstone, nobody fronted it"
+not-submitted,,Someone is out of pocket and HAS NOT filed yet
+submitted,,Expense report sent to Bruce
+paid,,Reimbursement received
+
+Team status,,
+forming,,
+active,,
+inactive,,
+
+Volunteer hours status,,
+logged,,"Recorded, not yet submitted to employer"
+submitted,,Filed in the employer portal
+granted,,Employer paid the grant
+denied,,
