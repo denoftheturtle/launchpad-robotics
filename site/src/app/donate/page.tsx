@@ -127,67 +127,20 @@ export default function DonatePage() {
               ))}
             </div>
 
-            {others.length > 0 && (
-              <>
-                <h3>Other local employers</h3>
-                <p className="small muted">
-                  These employers are known to run giving programs, but we
-                  haven&apos;t been able to confirm current ratios or caps from
-                  a public source. Check your internal portal for the real
-                  numbers — and if you find them,{" "}
-                  <a href="/contact">tell us</a> so we can update this page.
+            {others.length + blocked.length > 0 && (
+              <div className="callout" style={{ marginTop: 22 }}>
+                <strong>Don&apos;t see your employer?</strong>
+                <p className="small" style={{ marginBottom: 0 }}>
+                  Most large employers run a matching gift or volunteer grant
+                  program, but the ratios, caps and eligibility rules change
+                  often and are usually only visible once you&apos;re signed in.
+                  Check your company&apos;s internal giving portal — search it
+                  by EIN {org.sponsor.ein} or by{" "}
+                  &ldquo;{org.sponsor.legalName}&rdquo;. If you find the
+                  details, <a href="/contact">tell us</a> and we&apos;ll add
+                  your employer to the confirmed list above.
                 </p>
-                <div className="grid cols-3">
-                  {others.map((e) => (
-                    <div className="card" key={e.slug}>
-                      <h3 style={{ fontSize: 15 }}>{e.name}</h3>
-                      <p className="small">
-                        {e.platform ?? "Program details unconfirmed"}
-                        {e.matchRatio ? ` · ${e.matchRatio}` : ""}
-                      </p>
-                      {e.portalUrl && (
-                        <a
-                          className="small"
-                          href={e.portalUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Portal →
-                        </a>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {blocked.length > 0 && (
-              <>
-                <h3>Employers whose programs likely won&apos;t cover us</h3>
-                <p className="small muted">
-                  Worth knowing before you spend time in a portal. Several
-                  large employers restrict matching to educational
-                  institutions only, and some have no employee matching
-                  program at all. If you work at one of these, a direct gift
-                  through our sponsor still helps — and your spouse&apos;s
-                  employer may match.
-                </p>
-                <div className="grid cols-3">
-                  {blocked.map((e) => (
-                    <div className="card" key={e.slug}>
-                      <h3 style={{ fontSize: 15 }}>
-                        {e.name}
-                        <span className="pill unconfirmed" style={{ marginLeft: 8 }}>
-                          {e.restriction === "education-only"
-                            ? "education only"
-                            : "no program"}
-                        </span>
-                      </h3>
-                      {e.notes && <p className="small muted">{e.notes}</p>}
-                    </div>
-                  ))}
-                </div>
-              </>
+              </div>
             )}
           </div>
         </section>
