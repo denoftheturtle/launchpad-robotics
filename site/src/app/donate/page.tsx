@@ -1,6 +1,6 @@
 import { Nav, Footer } from "@/components/Chrome";
 import CopyField from "@/components/CopyField";
-import { org, complianceRules, fairnessPolicy, donorProspects, grossUp, money } from "@/lib/org";
+import { org, fairnessPolicy, donorProspects, grossUp, money } from "@/lib/org";
 import { getEmployers, capLabel, matchable, restricted } from "@/lib/employers";
 
 export const metadata = { title: `Donate & Match — ${org.name}` };
@@ -258,29 +258,8 @@ export default function DonatePage() {
 
         <section>
           <div className="wrap">
-            <h2>Rules we have to follow</h2>
-            <p className="section-sub">
-              These come from IRS public charity rules and our sponsor&apos;s
-              policy. They protect the nonprofit status that makes your gift
-              deductible in the first place.
-            </p>
-            <div className="callout warn">
-              <ol>
-                {complianceRules.map((r) => (
-                  <li key={r.title}>
-                    <strong>{r.title}.</strong> {r.detail}
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <p className="small muted">
-              Short version: give to the organization, not to a kid. We
-              genuinely cannot accept gifts earmarked for an individual
-              student, and a gift tagged that way can create real problems for
-              our sponsor.
-            </p>
-            <div className="callout" style={{ marginTop: 16 }}>
-              <strong>Funding is not tied to what any family gives.</strong>
+            <h2>Funding is not tied to what any family gives</h2>
+            <div className="callout">
               <p className="small" style={{ marginBottom: 0 }}>
                 {fairnessPolicy.grants} {fairnessPolicy.nonDiscrimination} Every
                 student on our teams has the same access to what the club has,
