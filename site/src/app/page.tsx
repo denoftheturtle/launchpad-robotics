@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Nav, Footer } from "@/components/Chrome";
-import { org, complianceRules } from "@/lib/org";
+import { org } from "@/lib/org";
 
 export default function Home() {
   return (
@@ -154,19 +154,6 @@ export default function Home() {
                   Volunteer form
                 </Link>
               </div>
-            </div>
-
-            <div className="callout warn">
-              <strong>A few rules from our sponsor, before you give:</strong>
-              <ul>
-                {complianceRules.map((r) => (
-                  <li key={r.title}>{r.title}</li>
-                ))}
-              </ul>
-              <p className="small" style={{ marginBottom: 0 }}>
-                <Link href="/donate">Why these exist</Link> — they protect the
-                nonprofit status that makes your gift deductible.
-              </p>
             </div>
           </div>
         </section>
