@@ -1,6 +1,6 @@
 import { Nav, Footer } from "@/components/Chrome";
 import CopyField from "@/components/CopyField";
-import { org, fairnessPolicy, donorProspects, grossUp, money } from "@/lib/org";
+import { org, donorProspects, grossUp, money } from "@/lib/org";
 import { getEmployers, capLabel, matchable, restricted } from "@/lib/employers";
 
 export const metadata = { title: `Donate & Match — ${org.name}` };
@@ -206,20 +206,6 @@ export default function DonatePage() {
               coworker whose employer matches, and logging your volunteer
               hours. Both route through this page.
             </p>
-          </div>
-        </section>
-
-        <section>
-          <div className="wrap">
-            <h2>Funding is not tied to what any family gives</h2>
-            <div className="callout">
-              <p className="small" style={{ marginBottom: 0 }}>
-                {fairnessPolicy.grants} {fairnessPolicy.nonDiscrimination} Every
-                student on our teams has the same access to what the club has,
-                regardless of whether their family donated, fundraised, or
-                volunteered.
-              </p>
-            </div>
           </div>
         </section>
       </main>
