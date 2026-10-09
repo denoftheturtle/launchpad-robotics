@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { org } from "@/lib/org";
+import { org, fairnessPolicy } from "@/lib/org";
 import { Wordmark } from "@/components/Wordmark";
 
 export function Nav() {
@@ -32,6 +32,10 @@ export function Footer() {
           A sponsored program of {org.sponsor.legalName}, a registered
           501(c)(3) public charity. EIN {org.sponsor.ein}. Contributions are
           tax-deductible to the extent allowed by law.
+        </p>
+        <p className="small muted">
+          {fairnessPolicy.nonDiscrimination} Gifts must be unrestricted and
+          cannot be earmarked for an individual student.
         </p>
         <p>
           <a href={`mailto:${org.email}`}>{org.email}</a>
